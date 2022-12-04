@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Electronic Gadgets </title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap" rel="stylesheet">
+ <!-- <link rel="stylesheet" href="css/main.css" /> -->
+ </head>
+<style>
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 50%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  padding: 7em 0;
+}
+
+.container {
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+}
+
+.split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.split > * {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 15em;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-text, #fff);
+  font-weight: 700;
+  text-align:center;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  padding: .5em 1.25em;
+  background: var(--clr-accent, blue);
+  border-radius: .25em;
+  -webkit-transition: opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+  transition: opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out,
+ opacity 250ms linear;
+  transition: transform 250ms ease-in-out,
+ opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: .9;
+}
+
+.primary-title {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.hero {
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+  background: #222;
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url("https://merchandiseuganda.com/wp-content/uploads/2020/06/electronic-devices-gadgets-symbol-vector-round-colorful-outlin-gadget-sign-dark-blue-background-73594851.jpg"), radial-gradient(#777, #222);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.featured {
+  background: #fff;
+}
+
+.featured__item {
+  display: block;
+  position: relative;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.featured__item:hover, .featured__item:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.featured__item:hover .featured__details, .featured__item:focus .featured__details {
+  opacity: 1;
+  text-shadow: 0 0 2em white;
+}
+
+.featured__item::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  padding: 75% 75% 0 0;
+  border-radius: 50%;
+  background: hsl(0, 0%, 90%);
+  z-index: -1;
+}
+
+.featured__details {
+  opacity: 0;
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+.featured__details span {
+  display: block;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.product {
+  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, magenta));
+  padding: 3em;
+  border-radius: 1em;
+  margin-bottom: 5em;
+  text-align: center;
+}
+
+
+.product__title {
+  font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+}
+
+
+.product__image {
+  margin: -5em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+    margin-bottom: 9em;
+  }
+  .product__title {
+    margin: 0;
+  }
+  .product__image {
+    float: right;
+    width: 65%;
+    shape-outside: url(../img/pic1.png);
+    shape-margin: 1em;
+    margin: 0 -5em 0 0;
+  }
+
+  .product.item-left .product__image {
+    float: left;
+    shape-outside: url(../img/pic2.png);
+    margin: 0 0 0 -5em;
+    shape-margin: 2em;
+  }
+}
+
+
+
+
+.hero {
+  --clr-accent: #6dd9e1;
+
+}
+.color-red {
+  --clr-inner: #fee290;
+  --clr-outer: #e48d00;
+  --clr-accent: #de913c;
+}
+
+.color-white {
+  --clr-inner: #fce290;
+  --clr-outer: #fce4b3 ;
+  --clr-accent: #efce58;
+}
+
+.color-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #6dd9e1;
+}
+.product color-red spacing{
+  width:50%;
+}
+</style>
+
+<body>
+
+  <header class="hero">
+    <div class="container spacing">
+      <h1 class="primary-title">Electronic Gadgets at one place</h1>
+      <p style="color:white"> Shop Online for most exciting range of Electronics products </p>
+      <a href="#" class="btn">See Products</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="featured">
+      <div class="container">
+        <h2 class="section-title">Shop Here</h2>
+        <div class="split">
+          <a href="#" class="featured__item">
+            <img src="https://brain-images-ssl.cdn.dixons.com/4/4/10155244/u_10155244.jpg">
+            <p class="featured__details"><span class="price">1,799/-</span>JBL Headphones Wireless</p>
+          </a>
+          <a href="#" class="featured__item">
+            <img src="https://th.bing.com/th/id/OIP.aI1MuVuQ3AJVBzW3wFUp8wHaFj?pid=ImgDet&rs=1">
+            <p class="featured__details"><span class="price">18,317/-</span>Sony Portable Wireless Speakers</p>
+          </a>
+          <a href="#" class="featured__item">
+            <img src="https://th.bing.com/th/id/OIP.qF_5DyfHBeYxKrAqy5I_0gHaE6?pid=ImgDet&rs=1">
+            <p class="featured__details"><span class="price">1,12,990/-</span>MacBook Pro</p>
+          </a>
+          <a href="#" class="featured__item">
+                 <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1519838523-sony-a7-r3-camera-1519838495.jpg?crop=1xw:1xh;center,top">
+            <p class="featured__details"><span class="price">89,990/-</span>Sony MirrorLess Lens</p>
+          </a>
+          <a href="#" class="featured__item">
+        <img src="https://th.bing.com/th/id/R.6b66a909f3d8f5bf49f0cb6f856bac21?rik=kaG69SxzErMpTg&riu=http%3a%2f%2fmechanicalkeyboards.com%2fshop%2fimages%2fproducts%2flarge_DKME2061ST-USPDZVT_main.jpg&ehk=%2bhAxc%2bCHT5hZ0yOpeR5EAdyWMV8WxbJ%2bC7yUkJ3jhH0%3d&risl=&pid=ImgRaw&r=0">
+            <p class="featured__details"><span class="price">3,599/-</span>Mini Mechanical Keyboard</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="our-products">
+      <div class="container">
+        <h2 class="section-title">Home Electronic Gadgets</h2>
+
+        <article class="product color-red spacing">
+            <img src="https://mobileimages.lowes.com/product/converted/048231/048231796651_08895806.jpg?size=xl?size=sm" width:100>
+          <h3 class="product__title">LG Smart Refrigerator</h3>
+          <p class="product__description">LG  Touchscreen Smart Wi-Fi Enabled 29.7-cu ft 4-Door French Door Refrigerator with Ice Maker and Door within Door (Fingerprint Resistant Steel) ENERGY STAR</p>
+            <a href="" class="btn">Buy now</a>
+        </article>
+
+        <article class="product color-white shoe-left spacing">
+            <img src="https://www.rajtronics.com/product-images/81gMvEwhU5L._SL1500_.jpg/1449842000013637011/1100x1100">
+          <h3 class="product__title">Samsung Front Load Dryer</h3>
+          <p class="product__description">Samsung Front Load WM WW60R20EK0S</p>
+            <a href="" class="btn">Buy now</a>
+        
+        </article>
+
+        <article class="product color-blue spacing">
+            <img src="https://www.tablety.pl/wp-content/uploads/2020/11/iphone-12-pro-max-1.jpg">
+          <h3 class="product__title">Apple IPhone 14 Pro</h3>
+          <p class="product__description">Apple IPhone 14 Pro price in India starts at Rs.129,900. The lowest price of Apple IPhone 14 Pro is Rs.107,470 </p>
+          <a href="" class="btn">Buy now</a>
+        </article>
+
+      </div>
+    </section>
+    <a href="#" class="btn" align = "center">Add to Cart</a>
+  </main>
+
+</body>
+
+</html>
